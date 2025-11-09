@@ -71,6 +71,46 @@ _REGISTRY: dict[str, RegistryEntry] = {
         / "src"
         / "inference.py",
     ),
+    "logistic_regression": RegistryEntry(
+        slug="logistic_regression",
+        display_name="Logistic Regression (Heart Disease)",
+        task_type="classification",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Logistic Regression"
+        / "src"
+        / "inference.py",
+    ),
+    "naive_bayes": RegistryEntry(
+        slug="naive_bayes",
+        display_name="Naive Bayes (Mushroom Edibility)",
+        task_type="classification",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Naive Bayes"
+        / "src"
+        / "inference.py",
+    ),
+    "support_vector_machine": RegistryEntry(
+        slug="support_vector_machine",
+        display_name="Support Vector Machine (Breast Cancer)",
+        task_type="classification",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Support Vector Machine"
+        / "src"
+        / "inference.py",
+    ),
+    "support_vector_regression": RegistryEntry(
+        slug="support_vector_regression",
+        display_name="Support Vector Regression (California Housing)",
+        task_type="regression",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Support Vector Regression"
+        / "src"
+        / "inference.py",
+    ),
 }
 
 

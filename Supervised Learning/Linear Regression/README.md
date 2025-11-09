@@ -117,6 +117,12 @@ where $\beta_1$ captures the expected salary increase per additional year of exp
 
 The notebook includes code cells that generate Q-Q plots, residual vs. fitted charts, and leverage statistics to test these assumptions empirically.
 
+### Plain-Language Intuition
+
+Imagine plotting everyone’s years of experience on the x-axis and their salary on the y-axis. Linear regression draws the straight line that stays as close as possible to every dot at once. The slope of that line says how much salary tends to change when experience increases by a year, while the intercept is the salary you would expect with zero experience. When you feed the model a new “years of experience” number, it simply reads the matching point on that line and gives you the corresponding salary estimate.
+
+Because we standardise the lone feature behind the scenes, the algorithm is less sensitive to the raw scale of the input. The reported metrics (R², RMSE, MAE) compare the predicted salaries against the actual ones on a small hold-out set so you can gauge how trustworthy the line is before using it elsewhere.
+
 ---
 
 ## Dataset

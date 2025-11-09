@@ -119,6 +119,12 @@ $$
 
 ---
 
+### Plain-Language Intuition
+
+You can think of logistic regression as a weighted checklist for heart health. Each feature (age, blood pressure, cholesterol, etc.) gets a weight that either pushes the score toward “disease” or “no disease.” After adding up the weighted checklist, the model runs the total through an S-shaped curve that squeezes any number into the 0–1 range, giving you a probability instead of a raw score. Values near 1 mean the checklist items pointed strongly toward disease; values near 0 mean the evidence leaned the other way.
+
+During training the model looks at many past patients, nudging the weights so that the predicted probabilities line up with the observed outcomes. The evaluation metrics summarise how often those probabilities translate into correct decisions and how confident the model can be when distinguishing risky patients from healthy ones.
+
 ## Dataset
 
 - **Source**: UCI Heart Disease dataset.

@@ -9,7 +9,7 @@ This project contains different handcrafted Machine Learning Models with variety
 
 ## Useage
 
-Refer to Readme for each app in thier respective folders to run them locally as well as getting to know the theory
+Refer to the README inside each algorithm folder for end-to-end guidance (theory, training steps, notebooks, FastAPI integration, and demo scripts).
 
 > [!NOTE]
 > Every project has its own different purpose, framework/tool-stack. As such, not every single one will have one or more of implementations mentioned in ***About The Project*** section
@@ -20,7 +20,8 @@ Supervised
 - [x] Linear Regression
 - [x] Logistic Regression
 - [x] Naive Bayes
-- [ ] SVM
+- [x] Support Vector Machine (Classification)
+- [x] Support Vector Regression (California Housing)
 - [ ] Decision Tree
 - [ ] Ensembles
     - [ ] Bagging
@@ -75,6 +76,12 @@ Deep Learning
     - [ ] Hopfield Machines
     - [ ] Graph Neural Networks
 - [ ] Neural Architecture Search
+
+### Recent Supervised Updates
+
+- Unified FastAPI endpoints now expose linear regression, logistic regression, Naive Bayes, SVM (classification), and SVR modules via the `fastapi_app` project.
+- Each completed module includes a production-style `src/` package, exploratory notebook, notebook-ready dataset, persisted artefacts, and a `demo.py` sampler for quick predictions.
+- READMEs now pair formal mathematical derivations with plain-language explanations to support both technical and non-technical audiences.
 
 ## Contributing
 

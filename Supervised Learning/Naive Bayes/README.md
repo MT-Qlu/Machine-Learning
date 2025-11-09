@@ -136,6 +136,12 @@ where $N_{y,v}$ counts how often value $v$ occurs among class $y$, $|\mathcal{V}
 
 ---
 
+### Plain-Language Intuition
+
+Naive Bayes is essentially a counting machine. It scans the training mushrooms, records how often each smell, cap colour, and habitat appears for the edible vs. poisonous group, and turns those tallies into simple percentages. When you pass in a new mushroom, the model grabs the relevant percentages for each trait and multiplies them together, producing a score for “poisonous” and another for “edible.” Whichever total is larger wins, and the ratio between them becomes the reported probability.
+
+The “naive” part comes from pretending the traits are independent—even though, in reality, they might influence one another. Surprisingly, as long as each trait gives a strong hint about safety on its own (odor is a great example), combining these hints still works very well, which is why the model nails this dataset despite the simplifying assumption.
+
 ## Dataset
 
 - **Source**: UCI Mushroom dataset (8,124 mushrooms, 22 categorical attributes, binary edibility label).
