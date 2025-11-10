@@ -45,11 +45,18 @@ Fast refresher on the supervised models hosted in this workspace. Skim the bulle
 - **Dial in:** Tune `k`, distance weighting, and feature scaling; cross-validate to avoid over-smoothing or noisy predictions.
 - **Watch out:** Outliers and heterogeneous feature scales distort neighbourhoods—normalise and consider outlier clipping.
 
-## Decision Tree *(module in progress)*
-- **Core idea:** Recursively split the feature space into pure subsets, producing an interpretable tree of rules.
-- **Use it when:** You need transparent decisions, handle mixed data types, or prototype ensemble baselines.
-- **Dial in:** Limit depth, minimum samples per split/leaf, and consider pruning to prevent memorising noise.
-- **Watch out:** Shallow trees underfit; deep trees overfit—always validate and visualise feature importance.
+## Decision Tree
+### Classification (Iris)
+- **Core idea:** Grow axis-aligned splits that maximise class purity and report feature importances for transparency.
+- **Use it when:** You want an interpretable baseline on small-to-medium tabular data or need probability outputs without heavy tuning.
+- **Dial in:** Adjust `max_depth`, `min_samples_leaf`, and `ccp_alpha` to balance bias/variance; inspect feature importances for sanity checks.
+- **Watch out:** Deep trees memorise noise—validate with stratified splits and prune or cap depth when metrics diverge.
+
+### Regression (California Housing)
+- **Core idea:** Segment the feature space into regions with similar target means, predicting the average value per leaf.
+- **Use it when:** You need quick non-linear baselines with explainable splits and ranked feature importance.
+- **Dial in:** Tune depth/leaf thresholds and cost-complexity pruning; bucket geographic features when necessary.
+- **Watch out:** Piecewise-constant predictions can jump at split boundaries; monitor residuals and revisit settings if variance spikes.
 
 ## Ensemble Models *(scaffolding in place)*
 ### Bagging / Random Forest

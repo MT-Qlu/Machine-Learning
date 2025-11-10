@@ -133,6 +133,28 @@ _REGISTRY: dict[str, RegistryEntry] = {
         / "src"
         / "inference.py",
     ),
+    "decision_tree_classification": RegistryEntry(
+        slug="decision_tree_classification",
+        display_name="Decision Tree (Iris Classification)",
+        task_type="classification",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Decision Tree"
+        / "Classification"
+        / "src"
+        / "inference.py",
+    ),
+    "decision_tree_regression": RegistryEntry(
+        slug="decision_tree_regression",
+        display_name="Decision Tree (California Housing Regression)",
+        task_type="regression",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Decision Tree"
+        / "Regression"
+        / "src"
+        / "inference.py",
+    ),
 }
 
 
