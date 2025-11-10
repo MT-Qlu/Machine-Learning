@@ -11,7 +11,9 @@ This project contains different handcrafted Machine Learning Models with variety
 
 Refer to the README inside each algorithm folder for end-to-end guidance (theory, training steps, notebooks, FastAPI integration, and demo scripts).
 For a quick refresher across every supervised model, start with `Supervised Learning/README.md`.
+For unsupervised modules, `Unsupervised Learning/README.md` now mirrors the same cheat-sheet format.
 For consolidated error/loss definitions and ready-to-use implementations, see `errors/README.md` alongside the reusable utilities in `errors/metrics.py`.
+Operational playbooks now live under `Benchmark Tools/`, `Evaluation/`, and `Monitoring/`, each with roadmap notes and upcoming automation plans.
 
 > [!NOTE]
 > Every project has its own different purpose, framework/tool-stack. As such, not every single one will have one or more of implementations mentioned in ***About The Project*** section
@@ -46,14 +48,19 @@ Supervised
     - [x] Prophet
     - [x] Exponential Smoothing (Holt-Winters)
 
+Operations & Tooling
+- [ ] Benchmark Tools
+- [ ] Evaluation Playbooks
+- [ ] Monitoring & Observability
+
 UnSupervised
-- [ ] K Means Clustering
-- [ ] DBSCAN
-- [ ] Gaussian Mixture
-- [ ] PCA
-- [ ] ICA
-- [ ] Anomaly Detection
-- [ ] Time Series Analysis
+- [ ] K Means Clustering *(scaffolding in place)*
+- [ ] DBSCAN *(scaffolding in place)*
+- [ ] Gaussian Mixture *(scaffolding in place)*
+- [ ] PCA *(scaffolding in place)*
+- [ ] ICA *(scaffolding in place)*
+- [ ] Anomaly Detection *(scaffolding in place)*
+- [ ] Time Series Analysis *(scaffolding in place)*
     - [ ] Autocorrelation Analysis
     - [ ] Seasonality Decomposition
     - [ ] Trend Analysis
@@ -97,6 +104,8 @@ Deep Learning
 - Decision tree classification (Iris) and regression (California housing) modules provide interpretable baselines with feature importances surfaced via FastAPI endpoints and notebooks.
 - Support vector machine classification and regression modules now live under a unified directory with mirrored structures, notebooks, and API endpoints for both tasks.
 - Added an `errors/` workspace housing a comprehensive MathJax-friendly metric reference plus production-ready implementations for MAE, RMSE, sMAPE, R², cross-entropy variants, hinge loss, MASE, quantile loss, and more.
+- Introduced `Benchmark Tools/`, `Evaluation/`, and `Monitoring/` placeholders to stage upcoming benchmarking harnesses, evaluation playbooks, and observability runbooks.
+- Mirroring the supervised layout, unsupervised modules (K-Means, DBSCAN, Gaussian Mixtures, ICA, PCA, Anomaly Detection, and Time-Series Analysis) now ship with READMEs, CLI stubs, and modular `src/` scaffolding ready for future implementation.
 
 ## Contributing
 
