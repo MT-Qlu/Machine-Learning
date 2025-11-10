@@ -97,13 +97,18 @@ This module wraps a K-Nearest Neighbours (KNN) regressor for the scikit-learn di
 
 ## Mathematical Foundations
 
-For regression, KNN predicts a continuous value by averaging the targets of the $k$ nearest neighbours:
+For regression, KNN predicts a continuous value by averaging the targets of the `k` nearest neighbours:
 
 $$
-\hat{y}(x) = \frac{\sum_{x_i \in \mathcal{N}_k(x)} w_i \cdot y_i}{\sum_{x_i \in \mathcal{N}_k(x)} w_i},
+\hat{y}(x) = \frac{\sum_{x_i \in \mathcal{N}_k(x)} w_i y_i}{\sum_{x_i \in \mathcal{N}_k(x)} w_i}, \qquad w_i = \frac{1}{d(x, x_i)}
 $$
 
-where $w_i = 1 / d(x, x_i)$ for distance-weighted voting. Using Minkowski distance (order 2) with standardised features keeps scales comparable across disparate clinical measurements. Choosing $k$ balances bias (large $k$) and variance (small $k$).
+```
+y_hat(x) = sum_{xi in Nk(x)} (wi * yi) / sum_{xi in Nk(x)} wi
+wi = 1 / distance(x, xi)
+```
+
+Using Minkowski distance (order 2) with standardised features keeps scales comparable across disparate clinical measurements. Choosing `k` balances bias (large `k`) and variance (small `k`).
 
 ### Plain-Language Intuition
 

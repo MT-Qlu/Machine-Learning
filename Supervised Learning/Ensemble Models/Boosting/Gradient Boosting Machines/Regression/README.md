@@ -107,13 +107,17 @@ This module operationalises a Gradient Boosting Regressor for the California hou
 
 ## Mathematical Foundations
 
-Gradient boosting builds an additive model
+Gradient boosting builds an additive model described by
 
 $$
-F_m(x) = F_{m-1}(x) + \nu h_m(x)
+F_m(x) = F_{m-1}(x) + \nu \cdot h_m(x)
 $$
 
-where each weak learner \(h_m\) is fit to the negative gradient of the loss with respect to \(F_{m-1}(x)\). For squared error loss, this equates to fitting residuals at every stage. Shrinking the learning rate \(\nu\) while increasing the number of estimators reduces overfitting, and stochastic subsampling (`subsample < 1`) injects randomness akin to bagging while retaining the directional corrections of boosting.
+```
+F_m(x) = F_{m-1}(x) + learning_rate * h_m(x)
+```
+
+Each weak learner `h_m` is fit to the negative gradient of the loss with respect to `F_{m-1}(x)`. For squared error loss, this equates to fitting residuals at every stage. Shrinking the learning rate while increasing the number of estimators reduces overfitting, and stochastic subsampling (`subsample < 1`) injects randomness akin to bagging while retaining the directional corrections of boosting.
 
 ### Plain-Language Intuition
 

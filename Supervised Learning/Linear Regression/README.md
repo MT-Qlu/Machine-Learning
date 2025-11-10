@@ -88,25 +88,37 @@ The image bundles the repository and dependencies. On the first inference reques
 
 ## Mathematical Foundations
 
-Given a design matrix $X \in \mathbb{R}^{n \times p}$ and targets $y \in \mathbb{R}^{n}$, ordinary least squares (OLS) solves
+Given a design matrix `X` of shape `(n, p)` and targets `y` of length `n`, ordinary least squares (OLS) solves
 
 $$
-\hat{\beta} = \arg\min_{\beta} \lVert y - X\beta \rVert^2,
+\hat{\beta} = \arg\min_{\beta} \lVert y - X\beta \rVert^2
 $$
 
-producing the familiar closed-form solution (when $X^\top X$ is invertible)
+```
+beta_hat = argmin_beta ||y - X beta||^2
+```
+
+When `X^T X` is invertible, the closed-form solution becomes
 
 $$
-\hat{\beta} = (X^{\top}X)^{-1}X^{\top}y.
+\hat{\beta} = (X^{\top} X)^{-1} X^{\top} y
 $$
+
+```
+beta_hat = (X^T X)^{-1} X^T y
+```
 
 Intuitively, OLS finds the straight line that minimises the squared vertical distance between observed salaries and predicted salaries. With one feature, the fitted line is
 
 $$
-\hat{y} = \beta_0 + \beta_1 x,
+\hat{y} = \beta_0 + \beta_1 x
 $$
 
-where $\beta_1$ captures the expected salary increase per additional year of experience. For example, if $\beta_1 = 9{,}400$ and $\beta_0 = 29{,}000$, the model predicts a salary of roughly $29{,}000 + 9{,}400 \times 6.5 \approx 90{,}000$ USD for 6.5 years of experience.
+```
+y_hat = beta_0 + beta_1 * x
+```
+
+Here `beta_1` captures the expected salary increase per additional year of experience. For example, if `beta_1 = 9,400` and `beta_0 = 29,000`, the model predicts a salary of roughly `29,000 + 9,400 * 6.5`, which is about `90,000` USD for 6.5 years of experience.
 
 ### Assumptions worth checking
 

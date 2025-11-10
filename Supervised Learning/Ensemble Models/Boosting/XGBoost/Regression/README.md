@@ -107,7 +107,17 @@ This module operationalises an XGBoost regressor for the California housing data
 
 ## Foundations
 
-XGBoost minimises a regularised objective that combines loss reduction with penalties on tree complexity. Successive trees are fit on the gradient of the loss, while shrinkage, subsampling, and column sampling keep variance in check. This yields strong predictive performance with manageable training times.
+XGBoost minimises a regularised objective that combines loss reduction with penalties on tree complexity:
+
+$$
+\operatorname{Obj} = \sum_i l\big(y_i, \hat{y}_i^{(t)}\big) + \sum_k \Omega(f_k)
+$$
+
+```
+Obj = \sum_i l(y_i, \hat{y}_i^{(t)}) + \sum_k \Omega(f_k)
+```
+
+Successive trees are fit on the gradient of the loss, while shrinkage, subsampling, and column sampling keep variance in check. This yields strong predictive performance with manageable training times.
 
 ### Plain-Language Intuition
 

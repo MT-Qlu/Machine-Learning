@@ -65,12 +65,16 @@ This module packages Facebook Prophet (now simply Prophet) for the AirPassengers
 Prophet decomposes a time series into trend, seasonality, and holiday components:
 
 $$
-y(t) = g(t) + s(t) + h(t) + \varepsilon_t.
+y(t) = g(t) + s(t) + h(t) + \varepsilon_t
 $$
 
-- $g(t)$ models the trend via piecewise linear or logistic growth with changepoints.
-- $s(t)$ captures seasonal patterns using Fourier series.
-- $h(t)$ encodes user-defined holidays or events.
+```
+y(t) = g(t) + s(t) + h(t) + epsilon_t
+```
+
+- `g(t)` models the trend via piecewise linear or logistic growth with changepoints.
+- `s(t)` captures seasonal patterns using Fourier series.
+- `h(t)` encodes user-defined holidays or events.
 
 The model is fit using Stan, providing posterior uncertainty estimates that translate into forecast intervals.
 

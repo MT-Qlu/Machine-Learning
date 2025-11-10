@@ -157,6 +157,136 @@ _REGISTRY: dict[str, RegistryEntry] = {
         / "src"
         / "inference.py",
     ),
+    "random_forest_classification": RegistryEntry(
+        slug="random_forest_classification",
+        display_name="Random Forest (Breast Cancer Classification)",
+        task_type="classification",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Ensemble Models"
+        / "Bagging"
+        / "Random Forest"
+        / "Classification"
+        / "src"
+        / "inference.py",
+    ),
+    "random_forest_regression": RegistryEntry(
+        slug="random_forest_regression",
+        display_name="Random Forest (California Housing Regression)",
+        task_type="regression",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Ensemble Models"
+        / "Bagging"
+        / "Random Forest"
+        / "Regression"
+        / "src"
+        / "inference.py",
+    ),
+    "gradient_boosting_classification": RegistryEntry(
+        slug="gradient_boosting_classification",
+        display_name="Gradient Boosting (Wine Classification)",
+        task_type="classification",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Ensemble Models"
+        / "Boosting"
+        / "Gradient Boosting Machines"
+        / "Classification"
+        / "src"
+        / "inference.py",
+    ),
+    "gradient_boosting_regression": RegistryEntry(
+        slug="gradient_boosting_regression",
+        display_name="Gradient Boosting (California Housing Regression)",
+        task_type="regression",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Ensemble Models"
+        / "Boosting"
+        / "Gradient Boosting Machines"
+        / "Regression"
+        / "src"
+        / "inference.py",
+    ),
+    "stochastic_gradient_boosting_classification": RegistryEntry(
+        slug="stochastic_gradient_boosting_classification",
+        display_name="Stochastic Gradient Boosting (Wine Classification)",
+        task_type="classification",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Ensemble Models"
+        / "Boosting"
+        / "Stochastic Gradient Boosting"
+        / "Classification"
+        / "src"
+        / "inference.py",
+    ),
+    "stochastic_gradient_boosting_regression": RegistryEntry(
+        slug="stochastic_gradient_boosting_regression",
+        display_name="Stochastic Gradient Boosting (California Housing Regression)",
+        task_type="regression",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Ensemble Models"
+        / "Boosting"
+        / "Stochastic Gradient Boosting"
+        / "Regression"
+        / "src"
+        / "inference.py",
+    ),
+    "adaboost_classification": RegistryEntry(
+        slug="adaboost_classification",
+        display_name="AdaBoost (Breast Cancer Classification)",
+        task_type="classification",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Ensemble Models"
+        / "Boosting"
+        / "AdaBoost"
+        / "Classification"
+        / "src"
+        / "inference.py",
+    ),
+    "adaboost_regression": RegistryEntry(
+        slug="adaboost_regression",
+        display_name="AdaBoost (California Housing Regression)",
+        task_type="regression",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Ensemble Models"
+        / "Boosting"
+        / "AdaBoost"
+        / "Regression"
+        / "src"
+        / "inference.py",
+    ),
+    "xgboost_classification": RegistryEntry(
+        slug="xgboost_classification",
+        display_name="XGBoost (Wine Classification)",
+        task_type="classification",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Ensemble Models"
+        / "Boosting"
+        / "XGBoost"
+        / "Classification"
+        / "src"
+        / "inference.py",
+    ),
+    "xgboost_regression": RegistryEntry(
+        slug="xgboost_regression",
+        display_name="XGBoost (California Housing Regression)",
+        task_type="regression",
+        module_path=REPO_ROOT
+        / "Supervised Learning"
+        / "Ensemble Models"
+        / "Boosting"
+        / "XGBoost"
+        / "Regression"
+        / "src"
+        / "inference.py",
+    ),
 }
 
 

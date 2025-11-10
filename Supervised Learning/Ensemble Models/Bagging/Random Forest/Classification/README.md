@@ -136,13 +136,17 @@ This module delivers a production-ready Random Forest pipeline for diagnosing ma
 
 Random forests average the predictions from many decision trees trained on bootstrap samples. For classification, the forest produces class probabilities as the proportion of trees voting for each class. Bagging reduces variance: while a single tree may overfit idiosyncrasies in the training set, the ensemble de-correlates errors by injecting randomness via bootstrap sampling and feature subsampling (`max_features=sqrt`).
 
-The probability estimate for class \(c\) is:
+The probability estimate for class `c` is:
 
 $$
-\hat{P}(y = c \mid x) = \frac{1}{B} \sum_{b=1}^{B} \mathbb{1}\{T_b(x) = c\},
+\hat{P}(y = c \mid x) = \frac{1}{B} \sum_{b=1}^{B} \mathbb{1}\{T_b(x) = c\}
 $$
 
-where \(B\) is the number of trees, and \(T_b\) is the prediction of the \(b\)-th tree. As \(B \to \infty\), the law of large numbers guarantees convergence of the ensemble to its expectation, stabilising predictions.
+```
+P_hat(y = c | x) = (1 / B) * sum_{b=1..B} indicator[T_b(x) = c]
+```
+
+Here `B` is the number of trees, and `T_b` is the prediction of the `b`-th tree. As `B` grows, the law of large numbers guarantees convergence of the ensemble to its expectation, stabilising predictions.
 
 ### Plain-Language Intuition
 

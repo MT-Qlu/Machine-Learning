@@ -107,13 +107,17 @@ This module delivers a production-style K-Nearest Neighbours (KNN) classifier tr
 
 ## Mathematical Foundations
 
-KNN is a non-parametric method that assigns a label based on the majority class among the $k$ closest labelled samples. With distance metric $d(\cdot, \cdot)$, neighbour set $\mathcal{N}_k(x)$, and optional weights $w_i$, the predicted posterior is
+KNN is a non-parametric method that assigns a label based on the majority class among the `k` closest labelled samples. With distance metric `d(·, ·)`, neighbour set `Nk(x)`, and optional weights `wi`, the predicted posterior is
 
 $$
-\hat{P}(y = c \mid x) = \frac{\sum_{x_i \in \mathcal{N}_k(x)} w_i \cdot \mathbf{1}[y_i = c]}{\sum_{x_i \in \mathcal{N}_k(x)} w_i}.
+\hat{P}(y = c \mid x) = \frac{\sum_{x_i \in \mathcal{N}_k(x)} w_i \mathbf{1}[y_i = c]}{\sum_{x_i \in \mathcal{N}_k(x)} w_i}
 $$
 
-This implementation uses Minkowski distance (equivalent to Euclidean when $p = 2$) with distance-based weights, giving nearer neighbours stronger influence. Scaling features with `StandardScaler` keeps distance comparisons balanced across heterogeneous magnitudes.
+```
+P_hat(y = c | x) = sum_{xi in Nk(x)} (wi * indicator[yi = c]) / sum_{xi in Nk(x)} wi
+```
+
+This implementation uses Minkowski distance (equivalent to Euclidean when `p = 2`) with distance-based weights, giving nearer neighbours stronger influence. Scaling features with `StandardScaler` keeps distance comparisons balanced across heterogeneous magnitudes.
 
 ### Plain-Language Intuition
 

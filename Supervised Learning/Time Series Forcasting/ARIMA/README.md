@@ -87,19 +87,27 @@ This module packages an AutoRegressive Integrated Moving Average (ARIMA) workflo
 
 ## Mathematical Foundations
 
-ARIMA models difference a non-stationary series $d$ times, then fit an ARMA($p$, $q$) process to the resulting stationary sequence. The AR component captures auto-regressive structure
+ARIMA models difference a non-stationary series `d` times, then fit an ARMA(`p`, `q`) process to the resulting stationary sequence. The AR component captures auto-regressive structure
 
 $$
-X_t = \phi_1 X_{t-1} + \dots + \phi_p X_{t-p} + \varepsilon_t,
+X_t = \phi_1 X_{t-1} + \dots + \phi_p X_{t-p} + \varepsilon_t
 $$
+
+```
+X_t = phi_1 * X_{t-1} + ... + phi_p * X_{t-p} + epsilon_t
+```
 
 while the MA component models serially correlated shock terms
 
 $$
-\varepsilon_t = \theta_1 u_{t-1} + \dots + \theta_q u_{t-q} + u_t.
+\varepsilon_t = \theta_1 u_{t-1} + \dots + \theta_q u_{t-q} + u_t
 $$
 
-Combining differencing with AR and MA terms balances long-term trends and short-term fluctuations. Parameters $(p, d, q)$ are typically selected via information criteria or autocorrelation diagnostics; the default $(1,1,1)$ provides a solid baseline for AirPassengers.
+```
+epsilon_t = theta_1 * u_{t-1} + ... + theta_q * u_{t-q} + u_t
+```
+
+Combining differencing with AR and MA terms balances long-term trends and short-term fluctuations. Parameters `(p, d, q)` are typically selected via information criteria or autocorrelation diagnostics; the default `(1,1,1)` provides a solid baseline for AirPassengers.
 
 ### Plain-Language Intuition
 

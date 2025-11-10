@@ -117,16 +117,24 @@ This module packages an end-to-end workflow for categorical Naive Bayes on the c
 Categorical Naive Bayes models the posterior class probability by assuming conditional independence of features given the class label:
 
 $$
-P(y \mid x_1, \dots, x_n) \propto P(y) \prod_{i=1}^{n} P(x_i \mid y).
+P(y \mid x_1, \dots, x_n) \propto P(y) \prod_{i=1}^{n} P(x_i \mid y)
 $$
 
-For mushroom edibility, each feature (cap shape, odor, habitat, …) can take a finite set of symbols. The classifier learns class-conditional likelihood tables for every feature value using maximum likelihood with Laplace smoothing:
+```
+P(y | x1,...,xn) propto P(y) * prod_{i=1..n} P(x_i | y)
+```
+
+For mushroom edibility, each feature (cap shape, odor, habitat, ...) can take a finite set of symbols. The classifier learns class-conditional likelihood tables for every feature value using maximum likelihood with Laplace smoothing:
 
 $$
-P(x_i = v \mid y) = \frac{N_{y,v} + \alpha}{N_y + \alpha |\mathcal{V}_i|},
+P(x_i = v \mid y) = \frac{N_{y,v} + \alpha}{N_y + \alpha \lvert \mathcal{V}_i \rvert}
 $$
 
-where $N_{y,v}$ counts how often value $v$ occurs among class $y$, $|\mathcal{V}_i|$ is the cardinality of feature $i$, and $\alpha$ is the smoothing strength (defaults to 1 in `CategoricalNB`). Taking the logarithm converts the product into a sum, which is numerically stable and computationally cheap. Despite the bold independence assumption, Naive Bayes performs exceptionally well on this dataset because many features provide strong, near-orthogonal signals about toxicity.
+```
+P(x_i = v | y) = (N_{y,v} + alpha) / (N_y + alpha * |V_i|)
+```
+
+Here `N_{y,v}` counts how often value `v` occurs among class `y`, `|V_i|` is the cardinality of feature `i`, and `alpha` is the smoothing strength (defaults to 1 in `CategoricalNB`). Taking the logarithm converts the product into a sum, which is numerically stable and computationally cheap. Despite the bold independence assumption, Naive Bayes performs exceptionally well on this dataset because many features provide strong, near-orthogonal signals about toxicity.
 
 ### Assumptions to monitor
 

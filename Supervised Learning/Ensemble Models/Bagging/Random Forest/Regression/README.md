@@ -109,13 +109,17 @@ This module wraps a Random Forest Regressor for predicting median house values a
 
 ## Mathematical Foundations
 
-Random forest regression averages the predictions of \(B\) decision trees, each fit on a bootstrap sample with feature subsampling. For an input \(x\), the prediction is:
+Random forest regression averages the predictions of `B` decision trees, each fit on a bootstrap sample with feature subsampling. For an input `x`, the prediction is:
 
 $$
-\hat{f}(x) = \frac{1}{B} \sum_{b=1}^{B} T_b(x),
+\hat{f}(x) = \frac{1}{B} \sum_{b=1}^{B} T_b(x)
 $$
 
-where \(T_b(x)\) is the response from the \(b\)-th tree. Bagging smooths out high-variance behaviour—individual trees may overfit, but their average converges to a low-variance estimator as \(B\) grows. For noisy regression tasks, this stabilisation often yields strong performance without heavy tuning.
+```
+f_hat(x) = (1 / B) * sum_{b=1..B} T_b(x)
+```
+
+Here `T_b(x)` is the response from the `b`-th tree. Bagging smooths out high-variance behaviour—individual trees may overfit, but their average converges to a low-variance estimator as `B` grows. For noisy regression tasks, this stabilisation often yields strong performance without heavy tuning.
 
 ### Plain-Language Intuition
 

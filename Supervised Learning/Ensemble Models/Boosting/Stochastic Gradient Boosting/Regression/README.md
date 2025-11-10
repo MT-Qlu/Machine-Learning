@@ -109,6 +109,10 @@ This module delivers a stochastic gradient boosting regressor for the California
 
 Stochastic gradient boosting fits shallow trees in sequence, each correcting the residual error of the current ensemble. The update pattern is shown below:
 
+$$
+F_0(x) = \text{baseline}, \qquad F_m(x) = F_{m-1}(x) + \nu \cdot h_m(x)
+$$
+
 ```
 F_0(x) = baseline
 F_m(x) = F_{m-1}(x) + learning_rate * h_m(x)

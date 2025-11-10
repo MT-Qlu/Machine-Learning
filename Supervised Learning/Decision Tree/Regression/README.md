@@ -109,11 +109,15 @@ This module wraps a decision tree regressor for predicting median house values a
 
 ## Mathematical Foundations
 
-Decision tree regression chooses splits that minimise the weighted mean squared error of child nodes. For a node $t$ with response variance $Var(t)$, a candidate split $s$ yields impurity reduction
+Decision tree regression chooses splits that minimise the weighted mean squared error of child nodes. For a node `t` with response variance `Var(t)`, a candidate split `s` yields impurity reduction
 
 $$
-\Delta Var(s, t) = Var(t) - \frac{N_{left}}{N_t} Var(t_{left}) - \frac{N_{right}}{N_t} Var(t_{right}).
+\Delta \operatorname{Var}(s, t) = \operatorname{Var}(t) - \frac{N_{\text{left}}}{N_t} \operatorname{Var}(t_{\text{left}}) - \frac{N_{\text{right}}}{N_t} \operatorname{Var}(t_{\text{right}})
 $$
+
+```
+DeltaVar(s, t) = Var(t) - (N_left / N_t) * Var(t_left) - (N_right / N_t) * Var(t_right)
+```
 
 The algorithm greedily selects the split with the largest variance reduction until stopping criteria are met. Predictions in each leaf are simply the mean target value of the training samples that fall into that leaf. Cost-complexity pruning (controlled via `ccp_alpha`) can reduce overfitting by penalising depth.
 

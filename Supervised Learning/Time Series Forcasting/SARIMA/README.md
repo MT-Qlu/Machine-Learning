@@ -64,10 +64,14 @@ This module extends the ARIMA workflow with explicit seasonality using a Seasona
 SARIMA introduces seasonal differencing and seasonal AR/MA components:
 
 $$
-\Phi_p(L^s) (1 - L^s)^D \phi_p(L) (1 - L)^d X_t = \Theta_q(L^s) \theta_q(L) \varepsilon_t,
+\Phi_p(L^s) (1 - L^s)^D \phi_p(L) (1 - L)^d X_t = \Theta_q(L^s) \theta_q(L) \varepsilon_t
 $$
 
-where $L$ is the lag operator and $s$ is the seasonal period (12 for monthly data). This structure captures repeating annual patterns while still modelling non-seasonal dynamics. The $(1,1,1)\times(1,1,1)_{12}$ configuration provides a strong baseline for AirPassengers.
+```
+Phi_p(L^s) * (1 - L^s)^D * phi_p(L) * (1 - L)^d * X_t = Theta_q(L^s) * theta_q(L) * epsilon_t
+```
+
+Here `L` is the lag operator and `s` is the seasonal period (12 for monthly data). This structure captures repeating annual patterns while still modelling non-seasonal dynamics. The `(1,1,1) x (1,1,1)_12` configuration provides a strong baseline for AirPassengers.
 
 ### Plain-Language Intuition
 

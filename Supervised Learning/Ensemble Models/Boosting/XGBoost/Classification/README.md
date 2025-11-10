@@ -116,6 +116,10 @@ This module packages an XGBoost classifier for the UCI wine dataset. It mirrors 
 
 XGBoost extends gradient boosting with second-order Taylor approximations, shrinkage, column subsampling, and regularisation terms. Each tree is fit to minimise a regularised objective that balances loss reduction against model complexity:
 
+$$
+\operatorname{Obj} = \sum_i l\big(y_i, \hat{y}_i^{(t)}\big) + \sum_k \Omega(f_k)
+$$
+
 ```
 Obj = \sum_i l(y_i, \hat{y}_i^{(t)}) + \sum_k \Omega(f_k)
 ```

@@ -122,23 +122,37 @@ This module delivers a production-ready Support Vector Machine (SVM) pipeline fo
 
 ## Mathematical Foundations
 
-Support Vector Machines seek the hyperplane that maximises the margin between classes. For a binary dataset $(x_i, y_i)$ with labels $y_i \in \{-1, 1\}$, the hard-margin formulation is:
+Support Vector Machines seek the hyperplane that maximises the margin between classes. For a binary dataset `(x_i, y_i)` with labels `y_i` in `{-1, 1}`, the hard-margin formulation is:
 
 $$
-\min_{w, b} \frac{1}{2} \lVert w \rVert^2 \quad \text{s.t.} \quad y_i (w^\top x_i + b) \geq 1, \; \forall i.
+\min_{w, b} \frac{1}{2} \lVert w \rVert^2 \quad \text{s.t.} \quad y_i (w^{\top} x_i + b) \geq 1, \; \forall i
 $$
 
-In practice we use the soft-margin variant with slack variables $\xi_i$ and penalty $C$:
+```
+min_{w, b} (1/2) * ||w||^2    subject to   y_i * (w^T x_i + b) >= 1  for all i
+```
+
+In practice we use the soft-margin variant with slack variables `xi_i` and penalty `C`:
 
 $$
-\min_{w, b, \xi} \frac{1}{2} \lVert w \rVert^2 + C \sum_i \xi_i \quad \text{s.t.} \quad y_i (w^\top x_i + b) \geq 1 - \xi_i, \; \xi_i \geq 0.
+\min_{w, b, \xi} \frac{1}{2} \lVert w \rVert^2 + C \sum_i \xi_i \quad \text{s.t.} \quad y_i (w^{\top} x_i + b) \geq 1 - \xi_i, \; \xi_i \geq 0
 $$
+
+```
+min_{w, b, xi} (1/2) * ||w||^2 + C * sum_i xi_i
+subject to   y_i * (w^T x_i + b) >= 1 - xi_i
+            xi_i >= 0
+```
 
 The dual problem admits kernel substitution, allowing us to operate in a high- (even infinite-) dimensional feature space without explicit mapping. This implementation uses the RBF kernel:
 
 $$
-K(x_i, x_j) = \exp\left(-\gamma \lVert x_i - x_j \rVert^2\right),
+K(x_i, x_j) = \exp\big(-\gamma \lVert x_i - x_j \rVert^2\big)
 $$
+
+```
+K(x_i, x_j) = exp(-gamma * ||x_i - x_j||^2)
+```
 
 which captures non-linear decision boundaries while retaining convex optimisation in the dual. Probabilities are calibrated by Platt scaling when `probability=True`.
 

@@ -109,6 +109,10 @@ This module delivers an AdaBoost regressor for the California housing dataset. I
 
 AdaBoost regression builds an additive ensemble of shallow trees. Each stage fits the residuals from the current ensemble and contributes a weighted correction:
 
+$$
+F_m(x) = F_{m-1}(x) + \alpha_m h_m(x)
+$$
+
 ```
 F_m(x) = F_{m-1}(x) + alpha_m * h_m(x)
 ```

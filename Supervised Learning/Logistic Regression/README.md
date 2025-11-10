@@ -96,14 +96,22 @@ This module delivers a complete learning and production toolkit for binary logis
 Binary logistic regression models log-odds of the positive class as a linear combination of predictors:
 
 $$
-\log \frac{P(y=1 \mid x)}{1 - P(y=1 \mid x)} = \beta_0 + \beta_1 x_1 + \dots + \beta_p x_p.
+\log \frac{P(y = 1 \mid x)}{1 - P(y = 1 \mid x)} = \beta_0 + \beta_1 x_1 + \dots + \beta_p x_p
 $$
+
+```
+log( P(y=1 | x) / (1 - P(y=1 | x)) ) = beta_0 + beta_1 * x_1 + ... + beta_p * x_p
+```
 
 Solving for the probability yields the familiar sigmoid:
 
 $$
-P(y=1 \mid x) = \sigma(\beta_0 + \beta^\top x) = \frac{1}{1 + e^{-(\beta_0 + \beta^\top x)}}.
+P(y = 1 \mid x) = \frac{1}{1 + e^{-(\beta_0 + \beta^{\top} x)}}
 $$
+
+```
+P(y=1 | x) = 1 / (1 + exp(-(beta_0 + beta^T x)))
+```
 
 ### Interpreting coefficients
 

@@ -111,16 +111,24 @@ This module provides a production-ready decision tree classifier for the classic
 Decision trees recursively partition the feature space. At each node, the algorithm selects the feature and threshold that yields the largest impurity reduction (Gini index by default):
 
 $$
-G(t) = 1 - \sum_{k=1}^{K} p_{k,t}^2,
+G(t) = 1 - \sum_{k=1}^{K} p_{k,t}^2
 $$
 
-where $p_{k,t}$ is the proportion of class $k$ in node $t$. A split $s$ partitions the node into left/right children and maximises the impurity decrease
+```
+G(t) = 1 - sum_{k=1..K} (p_{k,t}^2)
+```
+
+Here `p_{k,t}` is the proportion of class `k` in node `t`. A split `s` partitions the node into left/right children and maximises the impurity decrease
 
 $$
-\Delta G(s, t) = G(t) - \frac{N_{left}}{N_t} G(t_{left}) - \frac{N_{right}}{N_t} G(t_{right}).
+\Delta G(s, t) = G(t) - \frac{N_{\text{left}}}{N_t} G(t_{\text{left}}) - \frac{N_{\text{right}}}{N_t} G(t_{\text{right}})
 $$
 
-The process continues until stopping criteria are met (maximum depth, minimum samples per leaf, or pure nodes). Cost-complexity pruning can later shrink the tree by trading depth for generalisation using the $\alpha$ penalty configured via `ccp_alpha`.
+```
+DeltaG(s, t) = G(t) - (N_left / N_t) * G(t_left) - (N_right / N_t) * G(t_right)
+```
+
+The process continues until stopping criteria are met (maximum depth, minimum samples per leaf, or pure nodes). Cost-complexity pruning can later shrink the tree by trading depth for generalisation using the `alpha` penalty configured via `ccp_alpha`.
 
 ### Plain-Language Intuition
 

@@ -60,21 +60,31 @@ This module implements Holt-Winters Exponential Smoothing for the AirPassengers 
 
 ## Mathematical Foundations
 
-Holt-Winters smoothing maintains level ($L_t$), trend ($T_t$), and seasonal ($S_t$) components:
+Holt-Winters smoothing maintains level (`L_t`), trend (`T_t`), and seasonal (`S_t`) components:
 
 $$
 \begin{aligned}
 L_t &= \alpha \frac{y_t}{S_{t-s}} + (1 - \alpha)(L_{t-1} + T_{t-1}), \\
 T_t &= \beta (L_t - L_{t-1}) + (1 - \beta) T_{t-1}, \\
-S_t &= \gamma \frac{y_t}{L_t} + (1 - \gamma) S_{t-s},
+S_t &= \gamma \frac{y_t}{L_t} + (1 - \gamma) S_{t-s}
 \end{aligned}
 $$
+
+```
+L_t = alpha * (y_t / S_{t-s}) + (1 - alpha) * (L_{t-1} + T_{t-1})
+T_t = beta * (L_t - L_{t-1}) + (1 - beta) * T_{t-1}
+S_t = gamma * (y_t / L_t) + (1 - gamma) * S_{t-s}
+```
 
 with forecasts given by
 
 $$
-\hat{y}_{t+h} = (L_t + h T_t) S_{t-s+h}.
+\hat{y}_{t+h} = (L_t + h T_t) S_{t-s+h}
 $$
+
+```
+y_hat_{t+h} = (L_t + h * T_t) * S_{t-s+h}
+```
 
 This additive trend + multiplicative seasonality configuration handles exponential growth while remaining computationally lightweight.
 

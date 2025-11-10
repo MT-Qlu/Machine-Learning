@@ -108,13 +108,18 @@ This module packages a gradient boosting classifier for the classic UCI wine dat
 
 ## Mathematical Foundations
 
-Gradient boosting fits an ensemble of weak learners (shallow trees) in a stage-wise fashion. Each tree \(h_m(x)\) is trained to approximate the negative gradient of the loss function with respect to the model’s current predictions. For multi-class classification with log-loss, the additive model evolves as:
+Gradient boosting fits an ensemble of weak learners (shallow trees) in a stage-wise fashion. Each tree `h_m(x)` is trained to approximate the negative gradient of the loss function with respect to the model’s current predictions. For multi-class classification with log-loss, the additive model evolves as:
 
 $$
-F_0(x) = \arg\min_c \sum_i L(y_i, c), \qquad F_m(x) = F_{m-1}(x) + \nu \cdot h_m(x),
+F_0(x) = \arg\min_c \sum_i L(y_i, c), \qquad F_m(x) = F_{m-1}(x) + \nu \cdot h_m(x)
 $$
 
-where \(\nu\) is the learning rate and \(h_m\) is fit to the residuals (negative gradients). Shrinking \(\nu\) and increasing the number of stages yields smoother fits that generalise better than single deep trees.
+```
+F_0(x) = argmin_c sum_i L(y_i, c)
+F_m(x) = F_{m-1}(x) + learning_rate * h_m(x)
+```
+
+Here `learning_rate` is the shrinkage factor and `h_m` is fit to the residuals (negative gradients). Shrinking the learning rate and increasing the number of stages yields smoother fits that generalise better than single deep trees.
 
 ### Plain-Language Intuition
 

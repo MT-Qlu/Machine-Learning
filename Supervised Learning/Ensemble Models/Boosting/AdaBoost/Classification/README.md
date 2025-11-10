@@ -133,6 +133,10 @@ This module packages an AdaBoost classifier for the scikit-learn breast cancer d
 
 AdaBoost iteratively reweights the training observations so that misclassified samples receive more emphasis in the next weak learner. Each learner contributes a weighted vote to the final prediction:
 
+$$
+F_m(x) = F_{m-1}(x) + \alpha_m h_m(x)
+$$
+
 ```
 F_m(x) = F_{m-1}(x) + alpha_m * h_m(x)
 ```

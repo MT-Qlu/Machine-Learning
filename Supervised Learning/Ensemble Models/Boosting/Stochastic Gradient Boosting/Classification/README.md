@@ -110,6 +110,10 @@ This module packages a stochastic gradient boosting classifier for the classic U
 
 Stochastic gradient boosting fits an ensemble of weak learners in sequence. Each tree is trained on the negative gradient of the loss with respect to the current model predictions, while the algorithm samples a subset of rows and features on each iteration. For multi-class classification the update looks like this:
 
+$$
+F_0(x) = \text{baseline}, \qquad F_m(x) = F_{m-1}(x) + \nu \cdot h_m(x)
+$$
+
 ```
 F_0(x) = baseline
 F_m(x) = F_{m-1}(x) + learning_rate * h_m(x)

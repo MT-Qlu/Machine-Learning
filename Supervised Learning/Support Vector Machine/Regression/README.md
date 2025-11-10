@@ -95,27 +95,41 @@ This module packages a production-ready Support Vector Regression (SVR) workflow
 
 ## Mathematical Foundations
 
-Support Vector Regression extends the maximum-margin idea to continuous targets. Given training pairs $(x_i, y_i)$, SVR finds a function $f(x) = w^\top \phi(x) + b$ that stays within an $\varepsilon$-wide tube around every target while keeping $w$ small:
+Support Vector Regression extends the maximum-margin idea to continuous targets. Given training pairs `(x_i, y_i)`, SVR finds a function `f(x) = w^T phi(x) + b` that stays within an `epsilon`-wide tube around every target while keeping `w` small:
 
 $$
 \min_{w, b, \xi, \xi^*} \frac{1}{2} \lVert w \rVert^2 + C \sum_i (\xi_i + \xi_i^*)
 $$
+
+```
+min_{w, b, xi, xi_star} (1/2) * ||w||^2 + C * sum_i (xi_i + xi_star_i)
+```
 
 subject to
 
 $$
 \begin{aligned}
 y_i - f(x_i) &\leq \varepsilon + \xi_i, \\
- f(x_i) - y_i &\leq \varepsilon + \xi_i^*, \\
- \xi_i, \xi_i^* &\geq 0.
+f(x_i) - y_i &\leq \varepsilon + \xi_i^*, \\
+\xi_i, \xi_i^* &\geq 0
 \end{aligned}
 $$
+
+```
+y_i - f(x_i) <= epsilon + xi_i
+f(x_i) - y_i <= epsilon + xi_star_i
+xi_i >= 0,  xi_star_i >= 0
+```
 
 Only samples that fall outside the tube (the support vectors) influence the solution. Kernel functions, such as the radial basis function (RBF) used here,
 
 $$
-K(x_i, x_j) = \exp\big(-\gamma \lVert x_i - x_j \rVert^2\big),
+K(x_i, x_j) = \exp\big(-\gamma \lVert x_i - x_j \rVert^2\big)
 $$
+
+```
+K(x_i, x_j) = exp(-gamma * ||x_i - x_j||^2)
+```
 
 allow the algorithm to learn non-linear relationships without explicitly mapping inputs to high-dimensional spaces.
 
