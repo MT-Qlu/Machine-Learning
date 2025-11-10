@@ -1,5 +1,7 @@
 # Error Metrics Reference
 
+**Location:** `Machine-Learning/Essentials/Errors`
+
 This guide consolidates the most commonly used loss and error metrics across regression and classification workflows. Each entry includes the mathematical definition, a plain-text counterpart for quick reference, typical use cases, and implementation notes that align with the modular utilities in `errors/metrics.py`.
 
 ## Getting Started
