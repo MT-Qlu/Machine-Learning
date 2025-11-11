@@ -24,7 +24,7 @@ rmse = root_mean_squared_error(y_true, y_pred)
 ### Mean Absolute Error (MAE)
 
 $$
-\operatorname{MAE} = \frac{1}{n} \sum_{i=1}^{n} \lvert y_i - \hat{y}_i \rvert
+	ext{MAE} = \frac{1}{n} \sum_{i=1}^{n} \lvert y_i - \hat{y}_i \rvert
 $$
 
 ```
@@ -36,7 +36,7 @@ MAE = (1 / n) * sum_{i=1..n} |y_i - y_hat_i|
 ### Mean Squared Error (MSE)
 
 $$
-\operatorname{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+	ext{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 $$
 
 ```
@@ -48,7 +48,7 @@ MSE = (1 / n) * sum_{i=1..n} (y_i - y_hat_i)^2
 ### Root Mean Squared Error (RMSE)
 
 $$
-\operatorname{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
+	ext{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
 $$
 
 ```
@@ -60,7 +60,7 @@ RMSE = sqrt( (1 / n) * sum_{i=1..n} (y_i - y_hat_i)^2 )
 ### Mean Absolute Percentage Error (MAPE)
 
 $$
-\operatorname{MAPE} = \frac{100}{n} \sum_{i=1}^{n} \left\lvert \frac{y_i - \hat{y}_i}{y_i} \right\rvert
+	ext{MAPE} = \frac{100}{n} \sum_{i=1}^{n} \left\lvert \frac{y_i - \hat{y}_i}{y_i} \right\rvert
 $$
 
 ```
@@ -72,7 +72,7 @@ MAPE = (100 / n) * sum_{i=1..n} |(y_i - y_hat_i) / y_i|
 ### Symmetric Mean Absolute Percentage Error (sMAPE)
 
 $$
-\operatorname{sMAPE} = \frac{100}{n} \sum_{i=1}^{n} \frac{\lvert y_i - \hat{y}_i \rvert}{(\lvert y_i \rvert + \lvert \hat{y}_i \rvert)/2}
+	ext{sMAPE} = \frac{100}{n} \sum_{i=1}^{n} \frac{\lvert y_i - \hat{y}_i \rvert}{(\lvert y_i \rvert + \lvert \hat{y}_i \rvert)/2}
 $$
 
 ```
@@ -140,7 +140,7 @@ Quantile_tau(r) = sum_{i=1..n} max(tau * r_i, (tau - 1) * r_i)
 ### Binary Cross-Entropy (Log Loss)
 
 $$
-\operatorname{BCE} = - \frac{1}{n} \sum_{i=1}^{n} \left[ y_i \log(p_i) + (1 - y_i) \log(1 - p_i) \right]
+	ext{BCE} = - \frac{1}{n} \sum_{i=1}^{n} \left[ y_i \log(p_i) + (1 - y_i) \log(1 - p_i) \right]
 $$
 
 ```
@@ -152,7 +152,7 @@ BCE = -(1 / n) * sum_{i=1..n} [ y_i * log(p_i) + (1 - y_i) * log(1 - p_i) ]
 ### Categorical Cross-Entropy
 
 $$
-\operatorname{CCE} = - \frac{1}{n} \sum_{i=1}^{n} \sum_{k=1}^{K} y_{ik} \log(p_{ik})
+	ext{CCE} = - \frac{1}{n} \sum_{i=1}^{n} \sum_{k=1}^{K} y_{ik} \log(p_{ik})
 $$
 
 ```
@@ -180,7 +180,7 @@ Hinge = (1 / n) * sum_{i=1..n} max(0, 1 - y_i * f(x_i))
 ### Mean Absolute Scaled Error (MASE)
 
 $$
-\operatorname{MASE} = \frac{\frac{1}{n} \sum_{i=1}^{n} \lvert y_i - \hat{y}_i \rvert}{\frac{1}{n - m} \sum_{i=m+1}^{n} \lvert y_i - y_{i-m} \rvert}
+	ext{MASE} = \frac{\frac{1}{n} \sum_{i=1}^{n} \lvert y_i - \hat{y}_i \rvert}{\frac{1}{n - m} \sum_{i=m+1}^{n} \lvert y_i - y_{i-m} \rvert}
 $$
 
 ```

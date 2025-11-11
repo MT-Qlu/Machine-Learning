@@ -112,7 +112,7 @@ This module wraps a decision tree regressor for predicting median house values a
 Decision tree regression chooses splits that minimise the weighted mean squared error of child nodes. For a node `t` with response variance `Var(t)`, a candidate split `s` yields impurity reduction
 
 $$
-\Delta \operatorname{Var}(s, t) = \operatorname{Var}(t) - \frac{N_{\text{left}}}{N_t} \operatorname{Var}(t_{\text{left}}) - \frac{N_{\text{right}}}{N_t} \operatorname{Var}(t_{\text{right}})
+\Delta \mathrm{Var}(s, t) = \mathrm{Var}(t) - \frac{N_{\text{left}}}{N_t} \mathrm{Var}(t_{\text{left}}) - \frac{N_{\text{right}}}{N_t} \mathrm{Var}(t_{\text{right}})
 $$
 
 ```

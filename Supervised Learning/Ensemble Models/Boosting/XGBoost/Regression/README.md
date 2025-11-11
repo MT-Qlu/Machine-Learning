@@ -110,7 +110,7 @@ This module operationalises an XGBoost regressor for the California housing data
 XGBoost minimises a regularised objective that combines loss reduction with penalties on tree complexity:
 
 $$
-\operatorname{Obj} = \sum_i l\big(y_i, \hat{y}_i^{(t)}\big) + \sum_k \Omega(f_k)
+	ext{Obj} = \sum_i l\big(y_i, \hat{y}_i^{(t)}\big) + \sum_k \Omega(f_k)
 $$
 
 ```
