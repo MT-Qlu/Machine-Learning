@@ -100,12 +100,18 @@ When you feel comfortable, this same structure can be ported to specialised arch
 
 ## 6. Beyond the vanilla CNN
 
-The code here stops at the foundational stack. Modern research and production systems frequently rely on:
+The code here stops at the foundational stack. Modern systems layer additional ideas to address depth, efficiency, and task-specific quirks. Keep this section handy as a study roadmap:
 
-- **Residual / Skip connections** (ResNet, ResNeXt) for very deep models.
-- **Dense connectivity** (DenseNet) to reuse features across layers.
-- **Mobile-friendly networks** (MobileNetV3, EfficientNet, ConvNeXt) for edge devices.
-- **Attention-based models** (Vision Transformers, Swin Transformer) that replace convolutions entirely.
-- **Hybrid schemes** (CNN + Transformer, SE blocks, depthwise separable convolutions) for specialised use cases.
+| Theme | Examples | Why it matters |
+| ----- | -------- | -------------- |
+| **Residual / Skip connections** | ResNet, ResNeXt, ResNeSt | Enable 50–1000 layer networks to train by passing features across blocks. |
+| **Dense connectivity** | DenseNet, CondenseNet | Concatenate features from every earlier layer to encourage feature reuse. |
+| **Multi-scale feature pyramids** | FPN, PANet, BiFPN | Combine low- and high-resolution features for detection/segmentation. |
+| **Object detection heads** | Faster R-CNN, Mask R-CNN, YOLO, SSD, RetinaNet | Extend the backbone with region proposal networks or anchor-free heads. |
+| **Segmentation & pixel tasks** | U-Net, DeepLab, PSPNet, SegFormer | Decoder/upsampling paths for dense predictions. |
+| **Mobile & efficient nets** | MobileNetV3, EfficientNetV2, ShuffleNet, ConvNeXt | Depthwise separable convolutions, compound scaling for edge devices. |
+| **Attention & hybrids** | Squeeze-and-Excitation (SE-Nets), CBAM, Vision Transformers, Swin Transformer, ConvNeXt V2 | Inject channel/spatial attention or replace convolutions with global attention. |
+| **Generative CNNs** | StyleGAN, BigGAN, Pix2Pix, CycleGAN | Use convolutional backbones for synthesis, translation, or super-resolution. |
 
-These variants will appear under their respective folders in the Deep Learning tree. Use the preparation here as the conceptual baseline before diving into those upgrades.
+- Each family will gain its own folder in this Deep Learning tree as implementations mature.
+- The vanilla CNN here is the prerequisite; you’ll reuse the same input pipelines, loss functions, and training loops when exploring these advanced architectures.
