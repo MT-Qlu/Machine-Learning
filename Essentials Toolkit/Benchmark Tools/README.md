@@ -106,6 +106,24 @@ To use a custom estimator supply the dotted import path (e.g. `fastapi_app.model
 
 Each metric specifies whether it expects label predictions, probabilities, or decision scores so the runner can request `predict`, `predict_proba`, or `decision_function` as needed.
 
+#### Metric cheat sheet (names & intuition)
+
+- **Accuracy** – proportion of correct classifications; treats all mistakes equally and is best when class balance is reasonable.
+- **Balanced accuracy** – average recall across classes; guards against inflated scores when the dataset is imbalanced.
+- **Precision / Recall / F1** – precision rewards low false-positive rates, recall rewards low false-negative rates, and F1 is the harmonic mean that balances the two; vital for detection problems where the error cost is asymmetric.
+- **ROC AUC & Average Precision** – probability-based ranking metrics; ROC AUC captures separability across thresholds, while average precision focuses on performance at the high-precision end of the curve.
+- **Log loss / Binary & Categorical Cross-Entropy** – penalise overconfident wrong probability forecasts; fundamental when you need calibrated outputs for downstream risk calculations.
+- **Mean Absolute Error (MAE)** – average magnitude of residuals; robust to outliers and interpretable in the original units.
+- **Mean Squared Error (MSE) & Root MSE (RMSE)** – square residuals before averaging, so large mistakes dominate; RMSE restores the original units for easier storytelling.
+- **Median Absolute Error** – median residual magnitude; even more resistant to outliers than MAE and useful when the error distribution is heavy-tailed.
+- **Mean Absolute Percentage Error (MAPE) & Symmetric MAPE (sMAPE)** – scale residuals by the true value to express error in percent terms; sMAPE avoids the divide-by-zero behaviour of MAPE.
+- **Mean Absolute Scaled Error (MASE)** – compares absolute error against a naïve seasonal baseline; great for benchmarking forecasting models on different series.
+- **R² / Explained Variance** – fraction of variance captured relative to a mean baseline; quick signal of regression goodness-of-fit (can turn negative when the model underperforms the baseline).
+- **Huber & Log-Cosh Losses** – hybrid objectives that behave like MSE for small errors but down-weight outliers; use them when robustness matters without sacrificing differentiability.
+- **Quantile (Pinball) Loss** – asymmetrical penalty controlled by a chosen quantile; enables prediction intervals and conservative/optimistic forecasts.
+- **Max Error** – worst-case residual; handy when you must bound the largest mistake.
+- **Hinge Loss** – margin-based classification loss used by SVMs; emphasises correctly classifying points with a safe margin of confidence.
+
 ## Outputs
 
 Every run produces:
