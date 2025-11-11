@@ -1,0 +1,41 @@
+name: iris-classification-benchmark
+task_type: classification
+description: Baseline classifiers on the Iris dataset.
+dataset:
+  loader: iris
+models:
+  - name: Logistic Regression
+    estimator: logistic_regression
+    parameters:
+      max_iter: 500
+      multi_class: auto
+      solver: lbfgs
+  - name: Random Forest
+    estimator: random_forest_classifier
+    parameters:
+      n_estimators: 200
+      random_state: 42
+metrics:
+  - name: accuracy
+    prediction: labels
+  - name: precision
+    prediction: labels
+    average: macro
+  - name: recall
+    prediction: labels
+    average: macro
+  - name: f1
+    prediction: labels
+    average: macro
+split:
+  strategy: stratified_kfold
+  folds: 5
+  shuffle: true
+  random_state: 42
+output:
+  directory: Essentials Toolkit/Benchmark Tools/output/iris
+  save_csv: true
+  save_json: true
+  timestamped: true
+metadata:
+  author: benchmark-toolkit

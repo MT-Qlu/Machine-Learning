@@ -1,0 +1,38 @@
+name: california-housing-benchmark
+task_type: regression
+description: Evaluate regressors on the California housing dataset.
+dataset:
+  loader: california_housing
+models:
+  - name: Gradient Boosting Regressor
+    estimator: gradient_boosting_regressor
+    parameters:
+      n_estimators: 300
+      learning_rate: 0.05
+      random_state: 42
+  - name: Elastic Net
+    estimator: elastic_net
+    parameters:
+      alpha: 0.01
+      l1_ratio: 0.5
+      max_iter: 5000
+metrics:
+  - name: mean_absolute_error
+    alias: mae
+    prediction: labels
+    greater_is_better: false
+  - name: root_mean_squared_error
+    alias: rmse
+    prediction: labels
+    greater_is_better: false
+  - name: r2
+    prediction: labels
+split:
+  strategy: kfold
+  folds: 5
+  shuffle: true
+  random_state: 42
+output:
+  directory: Essentials Toolkit/Benchmark Tools/output/california_housing
+metadata:
+  author: benchmark-toolkit

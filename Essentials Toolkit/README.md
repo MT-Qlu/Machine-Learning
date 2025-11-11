@@ -10,5 +10,6 @@ This workspace collects reusable building blocks that support every pipeline in 
 - `metrics/` — canonical loss and evaluation utilities for regression, classification, and forecasting.
 - `optimizers/` — NumPy implementations of common optimisation algorithms for custom training loops.
 - `scaling/` — feature scaling and normalisation routines with inverse-transform support.
+- `Benchmark Tools/` — benchmarking runbooks, configuration stubs, and metric catalogues shared across model families.
 
 Follow the breadcrumbs in each folder to continue deeper until you reach the implementation modules.

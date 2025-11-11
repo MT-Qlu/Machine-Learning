@@ -2,7 +2,7 @@
 
 **Location:** `Machine-Learning/Essentials/Errors`
 
-This guide consolidates the most commonly used loss and error metrics across regression and classification workflows. Each entry includes the mathematical definition, a plain-text counterpart for quick reference, typical use cases, and implementation notes that align with the modular utilities in `errors/metrics.py`.
+This guide consolidates the most commonly used loss and error metrics across regression and classification workflows. Each entry includes the mathematical definition, a plain-text counterpart for quick reference, typical use cases, and implementation notes that align with the modular utilities in `Essentials Toolkit/Errors/metrics.py`.
 
 ## Getting Started
 
@@ -198,4 +198,4 @@ MASE = ( mean |y_i - y_hat_i| ) / ( mean |y_i - y_{i-m}| )
 - **Forecasting competitions:** sMAPE and MASE are common in time-series leaderboards due to their scale-independence.
 - **Quantile targets:** Quantile loss generalises naturally to prediction intervals and asymmetric risk profiles.
 
-Refer to `errors/metrics.py` for ready-to-use implementations and integration tips.
+Refer to `Essentials Toolkit/Errors/metrics.py` for ready-to-use implementations and integration tips.

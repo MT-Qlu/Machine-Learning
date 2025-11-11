@@ -7,13 +7,14 @@ This project contains different handcrafted Machine Learning Models with variety
 > [!NOTE]
 > This project is still under developement and the progress so far is mentioned in the Roadmap section
 
-## Useage
+## Usage
 
-Refer to the README inside each algorithm folder for end-to-end guidance (theory, training steps, notebooks, FastAPI integration, and demo scripts).
-For a quick refresher across every supervised model, start with `Supervised Learning/README.md`.
-For unsupervised modules, `Unsupervised Learning/README.md` now mirrors the same cheat-sheet format.
-For consolidated error/loss definitions and ready-to-use implementations, see `errors/README.md` alongside the reusable utilities in `errors/metrics.py`.
-Operational playbooks now live under `Benchmark Tools/`, `Evaluation/`, and `Monitoring/`, each with roadmap notes and upcoming automation plans.
+- Refer to the README inside each algorithm folder for end-to-end guidance (theory, training steps, notebooks, FastAPI integration, and demo scripts).
+- Every workflow subdirectory (`artifacts/`, `data/`, `notebooks/`, `src/`) now ships with a scoped README that documents the contract for that slice of the pipeline.
+- For a quick refresher across every supervised model, start with `Supervised Learning/README.md`.
+- For unsupervised modules, `Unsupervised Learning/README.md` mirrors the same cheat-sheet format.
+- For consolidated error/loss definitions and ready-to-use implementations, see `Essentials Toolkit/Errors/README.md` alongside the reusable utilities in `Essentials Toolkit/Errors/metrics.py`.
+- Operational playbooks now live under `Essentials Toolkit/Benchmark Tools/`, `Evaluation/`, and `Monitoring/`, each with roadmap notes and upcoming automation plans.
 
 > [!NOTE]
 > Every project has its own different purpose, framework/tool-stack. As such, not every single one will have one or more of implementations mentioned in ***About The Project*** section
@@ -100,11 +101,12 @@ Deep Learning
 - READMEs now pair formal mathematical derivations with plain-language explanations to support both technical and non-technical audiences.
 - KNN classification (wine) and regression (diabetes) modules follow the same pattern, including FastAPI services and notebooks.
 - Time series forecasting modules (ARIMA, SARIMA, Prophet, Exponential Smoothing) now mirror the supervised-learning template with datasets, pipelines, notebooks, and inference services ready for deployment.
+- All supervised and unsupervised project folders now include README coverage down to the `artifacts/`, `data/`, `notebooks/`, and `src/` level to keep onboarding and maintenance friction-free.
 - A new supervised-learning cheat sheet (`Supervised Learning/README.md`) captures key interview-ready takeaways for every completed algorithm.
 - Decision tree classification (Iris) and regression (California housing) modules provide interpretable baselines with feature importances surfaced via FastAPI endpoints and notebooks.
 - Support vector machine classification and regression modules now live under a unified directory with mirrored structures, notebooks, and API endpoints for both tasks.
 - Added an `errors/` workspace housing a comprehensive MathJax-friendly metric reference plus production-ready implementations for MAE, RMSE, sMAPE, R², cross-entropy variants, hinge loss, MASE, quantile loss, and more.
-- Introduced `Benchmark Tools/`, `Evaluation/`, and `Monitoring/` placeholders to stage upcoming benchmarking harnesses, evaluation playbooks, and observability runbooks.
+- Introduced `Essentials Toolkit/Benchmark Tools/`, `Evaluation/`, and `Monitoring/` placeholders to stage upcoming benchmarking harnesses, evaluation playbooks, and observability runbooks.
 - Mirroring the supervised layout, unsupervised modules (K-Means, DBSCAN, Gaussian Mixtures, ICA, PCA, Anomaly Detection, and Time-Series Analysis) now ship with READMEs, CLI stubs, and modular `src/` scaffolding ready for future implementation.
 
 ## Contributing
