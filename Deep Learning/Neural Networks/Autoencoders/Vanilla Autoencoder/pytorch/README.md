@@ -4,6 +4,22 @@ Train a fully-connected autoencoder on Fashion-MNIST using a minimal modular pac
 
 ---
 
+## Learning goals
+
+- Refresh core autoencoder training concepts before adding regularisation such as noise, sparsity, or KL terms.
+- Inspect how reconstruction metrics respond to architectural tweaks like hidden size or activation changes.
+- Build intuition for PSNR/MSE metrics that carry forward to the other variants.
+
+---
+
+## Implementation highlights
+
+- Clear separation between `engine`, `train`, and `inference` makes it easy to script experiments.
+- Configuration centralises device selection and artifact paths so reruns stay reproducible.
+- Inference utilities let you perform reconstructions or latent projections without re-instantiating the training stack.
+
+---
+
 ## 1. Notebook tour
 
 - `notebooks/vanilla_autoencoder_pytorch.ipynb` walks through loading the modular `src` package, launching training, and visualising reconstructions.

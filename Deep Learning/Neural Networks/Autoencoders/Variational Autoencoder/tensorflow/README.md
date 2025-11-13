@@ -5,6 +5,22 @@ Keras implementation of the Fashion-MNIST VAE with KL annealing support via the 
 
 ---
 
+## Learning goals
+
+- Grasp how the KL divergence constrains the latent distribution and how annealing affects training stability.
+- Monitor reconstruction vs KL metrics to diagnose underfitting or posterior collapse.
+- Experiment with latent dimensionality and sampling strategies to explore generative capacity.
+
+---
+
+## Implementation highlights
+
+- Custom `train_step` returns reconstruction and KL losses separately for detailed logging.
+- Config supports KL weight schedules, enabling annealing experiments without code changes.
+- Inference utilities include sampling helpers that plug directly into notebooks for visualisation.
+
+---
+
 ## 1. Notebook tour
 
 - `notebooks/variational_autoencoder_tensorflow.ipynb` mirrors the configure → train → reconstruct flow and samples from the learned latent space.

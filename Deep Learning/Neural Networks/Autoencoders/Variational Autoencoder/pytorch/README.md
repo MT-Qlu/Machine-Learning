@@ -5,6 +5,22 @@ Latent variable model that learns a Gaussian posterior for Fashion-MNIST.
 
 ---
 
+## Learning goals
+
+- Understand how the KL divergence term regularises the latent space and enforces approximate posterior structure.
+- Visualise latent traversals and reconstructions to see the balance between reconstruction loss and KL weight.
+- Explore how changing `latent_dim` or `kl_weight` affects sample diversity and reconstruction fidelity.
+
+---
+
+## Implementation highlights
+
+- Encoder exposes `mu` and `logvar` so you can probe distributions directly in notebooks.
+- Training loop logs KL and reconstruction losses separately, making the trade-off easy to monitor.
+- Inference module ships sampling helpers that reuse the trained decoder for quick generation experiments.
+
+---
+
 ## 1. Notebook tour
 
 - `notebooks/variational_autoencoder_pytorch.ipynb` demonstrates training, inspects KL divergence, and samples novel digits.

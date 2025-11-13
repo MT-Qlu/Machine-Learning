@@ -8,4 +8,20 @@ Probabilistic autoencoder that pairs an encoder producing Gaussian parameters wi
 
 Use the provided notebooks to compare KL annealing schedules or visualise interpolations in latent space.
 
+---
+
+## Learning goals
+
+- Study how KL regularisation shapes smooth latent manifolds suitable for sampling.
+- Evaluate reconstruction vs KL trade-offs under different annealing schedules.
+- Practice generating new samples and latent traversals to assess model quality.
+
+---
+
+## Implementation highlights
+
+- Shared project layout ensures parity between PyTorch and TensorFlow experiments.
+- Training scripts log separate KL and reconstruction losses for deep-dive analysis.
+- Inference utilities expose sampling APIs so you can script custom visualisations quickly.
+
 ````

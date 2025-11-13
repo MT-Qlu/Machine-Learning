@@ -11,6 +11,18 @@ Comprehensive suite of Fashion-MNIST autoencoders implemented in both PyTorch an
 | `Contractive Autoencoder/` | Penalise encoder sensitivity | Analytic Jacobian penalty for robustness |
 | `Variational Autoencoder/` | Probabilistic latent space | Sampling helpers + KL tracking |
 
+### Learning goals
+
+- Build intuition for how different objectives (noise, sparsity, contraction, KL) shape latent representations.
+- Practise running parallel experiments in PyTorch and TensorFlow using the same project structure.
+- Develop a reusable workflow for training, evaluating, and visualising autoencoder behaviour.
+
+### Implementation highlights
+
+- Every module exposes consistent `config/data/model/train/inference/utils` packages to streamline experimentation.
+- Notebooks complement the code with hands-on walkthroughs and recommended probes.
+- Training scripts emit metrics JSONs plus checkpoints under `artifacts/`, simplifying cross-run comparisons.
+
 ### How to use this section
 
 1. Start with the vanilla module to familiarise yourself with the shared package layout.

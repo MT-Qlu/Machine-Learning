@@ -4,6 +4,22 @@ A Keras implementation of a fully-connected autoencoder trained on Fashion-MNIST
 
 ---
 
+## Learning goals
+
+- Revisit the fundamentals of encoder-decoder training before layering on penalties or stochasticity.
+- Explore how architectural decisions (latent size, depth) influence reconstruction loss and PSNR.
+- Practise using TensorFlow metrics and callbacks that recur across the other autoencoder modules.
+
+---
+
+## Implementation highlights
+
+- `train.py` wraps a custom training loop with history export so you can chart metrics in notebooks easily.
+- Config module consolidates device placement, artifact directories, and hyperparameters for reproducibility.
+- Inference helpers load saved models and provide reconstruction utilities ready for visual analysis.
+
+---
+
 ## 1. Notebook tour
 
 - `notebooks/vanilla_autoencoder_tensorflow.ipynb` mirrors the same three-step routine used in other modules: import `../src`, call `train.train()`, then rebuild a sample image.

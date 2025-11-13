@@ -5,6 +5,22 @@ Sub-classed Keras model that adds an analytic contractive penalty to the encoder
 
 ---
 
+## Learning goals
+
+- Understand how the contractive penalty relates to the encoder Jacobian and robustness to small perturbations.
+- Observe how the penalty competes with reconstruction loss over training epochs.
+- Experiment with activation functions and penalty weights to balance smoothness and fidelity.
+
+---
+
+## Implementation highlights
+
+- Custom `train_step` computes the contractive penalty inside a `tf.GradientTape` so you can instrument it easily.
+- Metrics log the penalty magnitude alongside reconstruction error for TensorBoard inspection.
+- Configuration module centralises latent size, penalty weight, and device placement for quick iteration.
+
+---
+
 ## 1. Notebook tour
 
 - `notebooks/contractive_autoencoder_tensorflow.ipynb` follows the configure → train → reconstruct workflow.
