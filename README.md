@@ -94,6 +94,13 @@ Deep Learning
     - [ ] Graph Neural Networks
 - [ ] Neural Architecture Search
 
+### Deep learning learning paths
+
+- Autoencoder track now includes vanilla, denoising, sparse, contractive, and variational variants with mirrored PyTorch/TensorFlow code, notebooks, and instructional READMEs.
+- Each notebook opens with learning objectives, prerequisites, and experiment prompts so it can be used as a standalone guided lab.
+- Shared project scaffolding (`config/`, `data/`, `model/`, `train/`, `inference/`, `utils/`) keeps experiments reproducible across frameworks.
+- Artefacts and metrics persist under `Deep Learning/Neural Networks/Autoencoders/<Variant>/artifacts/`, ready for comparison runs.
+
 ### Recent Supervised Updates
 
 - Unified FastAPI endpoints now expose linear regression, logistic regression, Naive Bayes, SVM (classification), and SVR modules via the `fastapi_app` project.
