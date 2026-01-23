@@ -1,4 +1,3 @@
-````markdown
 # TensorFlow Contractive Autoencoder
 
 Sub-classed Keras model that adds an analytic contractive penalty to the encoder.
@@ -69,5 +68,3 @@ Artefacts: `artifacts/tensorflow_contractive_ae/contractive_autoencoder.weights.
 1. Increase `contractive_weight` to emphasise robustness and monitor PSNR.
 2. Swap sigmoid activations for tanh to test the analytic penalty.
 3. Visualise latent space contractions by interpolating between encoded points.
-
-````

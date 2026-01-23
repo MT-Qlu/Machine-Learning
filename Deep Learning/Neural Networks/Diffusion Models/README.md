@@ -19,9 +19,10 @@ This learning path distils those ideas into approachable Fashion-MNIST experimen
 ## Conceptual overview
 
 1. **Forward diffusion (noising)**: Starting from a clean sample \( \mathbf{x}_0 \), repeatedly add Gaussian noise according to a predefined schedule \( \{\beta_t\}_{t=1}^T \) until the signal becomes nearly isotropic noise. We model the process as
-	\[
-	q(\mathbf{x}_t \mid \mathbf{x}_{t-1}) = \mathcal{N}(\sqrt{1-\beta_t}\,\mathbf{x}_{t-1}, \beta_t \mathbf{I}).
-	\]
+
+$$
+q(\mathbf{x}_t \mid \mathbf{x}_{t-1}) = \mathcal{N}(\sqrt{1-\beta_t}\,\mathbf{x}_{t-1}, \beta_t \mathbf{I}).
+$$
 
 2. **Reverse diffusion (denoising)**: Train a neural network to approximate the reverse transitions \( p_\theta(\mathbf{x}_{t-1} \mid \mathbf{x}_t) \). Because these transitions are intractable analytically, the model learns to predict the noise injected at each step, effectively estimating the score function.
 

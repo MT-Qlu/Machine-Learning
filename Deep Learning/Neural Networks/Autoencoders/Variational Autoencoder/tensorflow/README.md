@@ -1,4 +1,3 @@
-````markdown
 # TensorFlow Variational Autoencoder
 
 Keras implementation of the Fashion-MNIST VAE with KL annealing support via the config weight.
@@ -69,5 +68,3 @@ Artefacts: `artifacts/tensorflow_variational_ae/variational_autoencoder.weights.
 1. Lower `kl_weight` to encourage sharper reconstructions, then anneal it back.
 2. Increase `latent_dim` and visualise interpolations between random samples.
 3. Freeze the encoder and fine-tune only the decoder for a handful of epochs.
-
-````

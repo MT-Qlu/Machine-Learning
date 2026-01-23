@@ -1,4 +1,3 @@
-````markdown
 # PyTorch Sparse Autoencoder
 
 Impose sparsity in the latent representation using a KL divergence penalty.
@@ -70,5 +69,3 @@ Artefacts are stored in `artifacts/pytorch_sparse_ae/` (`sparse_autoencoder.pt`,
 1. Sweep `sparsity_weight` to understand the reconstruction vs sparsity trade-off.
 2. Plot the average activation of the latent layer across epochs.
 3. Combine this module with the denoising objective to build a sparse denoising autoencoder.
-
-````

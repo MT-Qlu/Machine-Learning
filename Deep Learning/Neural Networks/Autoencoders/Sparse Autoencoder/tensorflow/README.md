@@ -1,4 +1,3 @@
-````markdown
 # TensorFlow Sparse Autoencoder
 
 Custom training loop built with Keras to impose a KL divergence sparsity constraint on the latent code.
@@ -69,5 +68,3 @@ Checkpoint weights land in `artifacts/tensorflow_sparse_ae/` (`sparse_autoencode
 1. Reduce `sparsity_target` to 0.02 and observe the impact on PSNR.
 2. Swap the latent activation to `relu` and inspect how the KL penalty behaves.
 3. Combine the sparse penalty with denoising by perturbing inputs inside `data.py`.
-
-````

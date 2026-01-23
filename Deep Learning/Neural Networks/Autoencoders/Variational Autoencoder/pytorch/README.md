@@ -1,4 +1,3 @@
-````markdown
 # PyTorch Variational Autoencoder
 
 Latent variable model that learns a Gaussian posterior for Fashion-MNIST.
@@ -72,5 +71,3 @@ Sampling uses the reparameterisation trick:
 $$
 \mathbf{z} = \mu + \sigma \odot \epsilon, \quad \epsilon \sim \mathcal{N}(0, I)
 $$
-
-````

@@ -1,4 +1,3 @@
-````markdown
 # TensorFlow Denoising Autoencoder
 
 Mirror of the PyTorch denoising module using Keras and `tf.data`.
@@ -69,5 +68,3 @@ Artefacts land in `artifacts/tensorflow_denoising_ae/` (`denoising_autoencoder.k
 1. Increase `noise_std` in `config.py` and measure the PSNR drop-off.
 2. Replace the dense stack with convolutions by editing `model.py`.
 3. Export denoised samples back to disk for qualitative inspection.
-
-````

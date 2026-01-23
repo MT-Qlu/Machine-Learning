@@ -1,4 +1,3 @@
-````markdown
 # PyTorch Denoising Autoencoder
 
 Learn to undo Gaussian noise with a fully-connected denoising autoencoder built on top of the vanilla package.
@@ -74,5 +73,3 @@ Weights and metrics land in `artifacts/pytorch_denoising_ae/` (`denoising_autoen
 1. Sweep `noise_std` in `config.py` and monitor how PSNR scales with heavier corruption.
 2. Swap the MLP for a convolutional architecture and compare denoising quality.
 3. Try curriculum learning: start with low noise and gradually ramp it up during training.
-
-````

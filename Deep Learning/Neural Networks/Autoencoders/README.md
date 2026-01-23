@@ -22,22 +22,29 @@ Autoencoders learn **useful latent structure** by forcing information through a 
 
 ### Variant-specific objectives (at a glance)
 
-- **Denoising**: reconstruct clean inputs from corrupted versions.
-  $$
-  \mathcal{L} = \mathbb{E}_{\mathbf{x},\tilde{\mathbf{x}}}\big[\|\mathbf{x} - g_\phi(f_\theta(\tilde{\mathbf{x}}))\|_2^2\big]
-  $$
-- **Sparse**: encourage low average activation per latent unit.
-  $$
-  \mathcal{L} = \mathcal{L}_{\text{rec}} + \beta \sum_j \text{KL}(\rho \|\, \hat{\rho}_j)
-  $$
-- **Contractive**: penalise sensitivity of the encoder to input perturbations.
-  $$
-  \mathcal{L} = \mathcal{L}_{\text{rec}} + \lambda \|\nabla_\mathbf{x} f_\theta(\mathbf{x})\|_F^2
-  $$
-- **Variational**: learn a probabilistic latent distribution.
-  $$
-  \mathcal{L} = \mathbb{E}[\mathcal{L}_{\text{rec}}] + \text{KL}(q_\theta(\mathbf{z}\mid\mathbf{x})\;\|\;p(\mathbf{z}))
-  $$
+**Denoising**: reconstruct clean inputs from corrupted versions.
+
+$$
+\mathcal{L} = \mathbb{E}_{\mathbf{x},\widetilde{\mathbf{x}}}\big[\|\mathbf{x} - g_\phi(f_\theta(\widetilde{\mathbf{x}}))\|_2^2\big]
+$$
+
+**Sparse**: encourage low average activation per latent unit.
+
+$$
+\mathcal{L} = \mathcal{L}_{\text{rec}} + \beta \sum_j \mathrm{KL}(\rho\;\|\;\hat{\rho}_j)
+$$
+
+**Contractive**: penalise sensitivity of the encoder to input perturbations.
+
+$$
+\mathcal{L} = \mathcal{L}_{\text{rec}} + \lambda \|\nabla_{\mathbf{x}} f_\theta(\mathbf{x})\|_F^2
+$$
+
+**Variational**: learn a probabilistic latent distribution.
+
+$$
+\mathcal{L} = \mathbb{E}[\mathcal{L}_{\text{rec}}] + \mathrm{KL}(q_\theta(\mathbf{z}\mid\mathbf{x})\;\|\;p(\mathbf{z}))
+$$
 
 | Variant | Motivation | Notes |
 | ------- | ---------- | ----- |
