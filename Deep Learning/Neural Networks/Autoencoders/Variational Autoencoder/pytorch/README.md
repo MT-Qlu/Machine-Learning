@@ -59,4 +59,18 @@ Artefacts: `artifacts/pytorch_variational_ae/variational_autoencoder.pt` and `me
 2. Reduce `kl_weight` to ease the KL pressure and observe the trade-off.
 3. Use `inference.sample` to create a grid of synthetic images.
 
+## Theory recap
+
+The VAE optimises the negative ELBO:
+
+$$
+\mathcal{L} = \mathbb{E}_{q_\theta(\mathbf{z}\mid\mathbf{x})}[\|\mathbf{x} - g_\phi(\mathbf{z})\|_2^2] + \text{KL}(q_\theta(\mathbf{z}\mid\mathbf{x})\;\|\;p(\mathbf{z}))
+$$
+
+Sampling uses the reparameterisation trick:
+
+$$
+\mathbf{z} = \mu + \sigma \odot \epsilon, \quad \epsilon \sim \mathcal{N}(0, I)
+$$
+
 ````

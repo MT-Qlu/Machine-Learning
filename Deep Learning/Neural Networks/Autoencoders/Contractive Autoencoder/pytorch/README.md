@@ -5,6 +5,18 @@ Encourages robustness by penalising the Jacobian of the encoder with respect to 
 
 ---
 
+## Theory recap
+
+Contractive autoencoders penalise the encoder’s sensitivity to input changes:
+
+$$
+\mathcal{L} = \mathcal{L}_{\text{rec}} + \lambda \|\nabla_{\mathbf{x}} f_\theta(\mathbf{x})\|_F^2
+$$
+
+The Jacobian penalty encourages locally invariant representations.
+
+---
+
 ## Learning goals
 
 - Understand the motivation behind contractive penalties and how they relate to adversarial robustness.

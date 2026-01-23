@@ -5,6 +5,18 @@ Keras implementation of the Fashion-MNIST VAE with KL annealing support via the 
 
 ---
 
+## Theory recap
+
+VAEs optimise a reconstruction term plus a KL regulariser:
+
+$$
+\mathcal{L} = \mathbb{E}_{q_\theta(\mathbf{z}\mid\mathbf{x})}[\|\mathbf{x} - g_\phi(\mathbf{z})\|_2^2] + \text{KL}(q_\theta(\mathbf{z}\mid\mathbf{x})\;\|\;p(\mathbf{z}))
+$$
+
+Sampling uses $\mathbf{z} = \mu + \sigma \odot \epsilon$, with $\epsilon \sim \mathcal{N}(0, I)$.
+
+---
+
 ## Learning goals
 
 - Grasp how the KL divergence constrains the latent distribution and how annealing affects training stability.

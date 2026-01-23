@@ -5,6 +5,18 @@ Sub-classed Keras model that adds an analytic contractive penalty to the encoder
 
 ---
 
+## Theory recap
+
+The contractive penalty smooths the encoder by discouraging large gradients:
+
+$$
+\mathcal{L} = \mathcal{L}_{\text{rec}} + \lambda \|\nabla_{\mathbf{x}} f_\theta(\mathbf{x})\|_F^2
+$$
+
+This produces robust latent features that change slowly under small perturbations.
+
+---
+
 ## Learning goals
 
 - Understand how the contractive penalty relates to the encoder Jacobian and robustness to small perturbations.

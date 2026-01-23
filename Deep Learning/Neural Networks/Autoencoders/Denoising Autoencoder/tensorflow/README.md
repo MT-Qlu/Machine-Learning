@@ -5,6 +5,18 @@ Mirror of the PyTorch denoising module using Keras and `tf.data`.
 
 ---
 
+## Theory recap
+
+The model learns to map corrupted inputs back to clean targets:
+
+$$
+\mathcal{L}_{\text{denoise}} = \mathbb{E}_{\mathbf{x},\tilde{\mathbf{x}}}\big[\|\mathbf{x} - g_\phi(f_\theta(\tilde{\mathbf{x}}))\|_2^2\big]
+$$
+
+Corruption is injected in the data pipeline, keeping the model architecture unchanged while improving robustness.
+
+---
+
 ## Learning goals
 
 - Learn how to generate noisy/clean pairs inside a `tf.data` pipeline.

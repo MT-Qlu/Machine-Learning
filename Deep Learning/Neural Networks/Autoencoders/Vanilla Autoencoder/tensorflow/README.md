@@ -4,6 +4,18 @@ A Keras implementation of a fully-connected autoencoder trained on Fashion-MNIST
 
 ---
 
+## Theory recap
+
+The vanilla autoencoder minimises reconstruction error:
+
+$$
+\mathcal{L}_{\text{rec}} = \mathbb{E}_{\mathbf{x}}\big[\|\mathbf{x} - g_\phi(f_\theta(\mathbf{x}))\|_2^2\big]
+$$
+
+With a bottleneck, the encoder must compress the signal into $\mathbf{z}$, yielding compact features rather than an identity mapping.
+
+---
+
 ## Learning goals
 
 - Revisit the fundamentals of encoder-decoder training before layering on penalties or stochasticity.

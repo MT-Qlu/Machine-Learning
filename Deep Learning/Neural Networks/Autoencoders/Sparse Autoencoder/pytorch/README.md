@@ -5,6 +5,18 @@ Impose sparsity in the latent representation using a KL divergence penalty.
 
 ---
 
+## Theory recap
+
+Sparse autoencoders add a KL penalty to keep latent activations near a low target firing rate:
+
+$$
+\mathcal{L} = \mathcal{L}_{\text{rec}} + \beta \sum_j \text{KL}(\rho\;\|\;\hat{\rho}_j)
+$$
+
+where $\hat{\rho}_j$ is the average activation of unit $j$ and $\rho$ is a small target (e.g., 0.05).
+
+---
+
 ## Learning goals
 
 - Internalise how KL-based sparsity regularisation balances representation quality and reconstruction fidelity.

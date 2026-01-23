@@ -5,6 +5,18 @@ Custom training loop built with Keras to impose a KL divergence sparsity constra
 
 ---
 
+## Theory recap
+
+The objective augments reconstruction loss with a sparsity regulariser:
+
+$$
+\mathcal{L} = \mathcal{L}_{\text{rec}} + \beta \sum_j \text{KL}(\rho\;\|\;\hat{\rho}_j)
+$$
+
+This biases the latent space toward low activation rates, producing more interpretable features.
+
+---
+
 ## Learning goals
 
 - Observe how sparsity constraints manifest in a custom `train_step` for subclassed Keras models.

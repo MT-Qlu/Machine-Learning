@@ -5,6 +5,22 @@ Learn to undo Gaussian noise with a fully-connected denoising autoencoder built 
 
 ---
 
+## Theory recap
+
+The denoising objective reconstructs clean inputs from corrupted samples:
+
+$$
+\widetilde{\mathbf{x}} = \mathbf{x} + \epsilon, \quad \epsilon \sim \mathcal{N}(0, \sigma^2 I)
+$$
+
+$$
+\mathcal{L}_{\text{denoise}} = \mathbb{E}_{\mathbf{x},\tilde{\mathbf{x}}}\big[\|\mathbf{x} - g_\phi(f_\theta(\tilde{\mathbf{x}}))\|_2^2\big]
+$$
+
+This encourages the encoder to learn noise-robust features rather than memorising pixel-level noise.
+
+---
+
 ## Learning goals
 
 - Understand how input corruption changes the training objective compared with the vanilla autoencoder.
