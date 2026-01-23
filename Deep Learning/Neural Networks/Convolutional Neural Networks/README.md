@@ -28,9 +28,10 @@ input (28×28×1)
 ```
 
 - **Convolution**: a kernel \( W \) slides over the input \( X \). For one location `(i, j)`,
-  \[
+
+  $$
   (X * W)_{i,j} = \sum_{u=0}^{k-1}\sum_{v=0}^{k-1} X_{i+u, j+v} · W_{u,v}
-  \]
+  $$
 - **Pooling**: summarises small windows (e.g., max) to introduce robustness to small shifts.
 - **Batch Normalisation**: stabilises training by normalising activations inside the network.
 - **Dropout**: randomly drops activations (here inside the dense layers) to reduce overfitting.

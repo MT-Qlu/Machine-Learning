@@ -17,13 +17,13 @@ The PyTorch implementation encapsulates a DCGAN-inspired architecture tailored t
 
 The baseline uses the non-saturating loss formulation:
 
-\[
+$$
 \mathcal{L}_D = -\mathbb{E}_{x \sim p_{data}}[\log D(x)] - \mathbb{E}_{z \sim p(z)}[\log(1 - D(G(z)))]
-\]
+$$
 
-\[
+$$
 \mathcal{L}_G = -\mathbb{E}_{z \sim p(z)}[\log D(G(z))]
-\]
+$$
 
 where the generator receives gradients through the discriminator’s predictions. The implementation follows the DCGAN heuristics (use of Adam with \(\beta_1 = 0.5\), strided convolutions, batch norm) that promote stable convergence.
 
