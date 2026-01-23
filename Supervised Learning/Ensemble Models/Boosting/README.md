@@ -2,6 +2,24 @@
 
 Boosting stacks sequential weak learners so that each iteration focuses on the residual mistakes from the previous one. This hub documents the boosting families supported in the supervised catalogue. Every child directory follows the shared layout (`data/`, `src/`, `notebooks/`, `artifacts/`) to keep training and serving workflows consistent.
 
+---
+
+## Theory in brief
+
+Gradient boosting builds an additive model:
+
+$$
+F_m(x) = F_{m-1}(x) + \nu \cdot h_m(x)
+$$
+
+where each weak learner $h_m$ fits the negative gradient of the loss. The learning rate $\nu$ trades off speed vs. generalisation.
+
+## When to use
+
+- Strong tabular baselines with mixed numeric/categorical features.
+- You need high accuracy with controllable bias/variance trade-offs.
+- You can afford more training time for improved performance.
+
 ## Available Pipelines
 
 - **AdaBoost** — Adaptive re-weighting of samples with decision stumps or shallow trees.
@@ -18,3 +36,9 @@ When adding a new booster:
 1. Create a sibling directory and mirror the folder layout used here.
 2. Document training steps, hyperparameters, and evaluation protocol inside the new README.
 3. Update the FastAPI registry once artefacts are persisted so the service can load the new model.
+
+## Practical tips
+
+- Start with shallow trees (depth 3–6) and moderate learning rates (0.05–0.1).
+- Monitor early stopping and validation curves to prevent overfitting.
+- Use subsampling and column sampling for robustness on noisy datasets.

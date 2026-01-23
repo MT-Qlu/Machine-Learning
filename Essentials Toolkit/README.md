@@ -4,6 +4,10 @@
 
 This workspace collects reusable building blocks that support every pipeline in the repository. Each subdirectory includes its own README so you always know where you are and what utilities live there before dropping into code.
 
+## Beginner example
+
+If you’re training your first model, you can grab a loss metric from `Errors/`, scale features using `scaling/`, and compare experiments with the `Benchmark Tools/` configs—without re-writing common utilities.
+
 ## Directory Guide
 
 - `Errors/` — legacy-compatible error metric definitions and helpers.

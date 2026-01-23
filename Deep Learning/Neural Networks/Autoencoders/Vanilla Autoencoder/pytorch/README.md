@@ -5,14 +5,26 @@ Train a fully-connected autoencoder on Fashion-MNIST using a minimal modular pac
 
 ## Learning goals
 
+- Understand how reconstruction loss trains the encoder/decoder pair.
+- See how latent size impacts compression quality and PSNR.
+- Use the modular pipeline to reproduce results quickly.
 
 
 ## Implementation highlights
 
+- Clean separation of config, data, model, engine, and inference modules.
+- Automatic device selection (MPS → CUDA → CPU).
+- Metrics JSON + checkpoints for reproducible comparisons.
 
 
 ## 1. Notebook tour
 
+- `notebooks/vanilla_autoencoder_pytorch.ipynb` walks through configure → train → reconstruct.
+- The notebook highlights PSNR curves and qualitative reconstructions.
+
+## Beginner example
+
+Imagine compressing a drawing into a short code and then reconstructing it. The autoencoder learns the best code so the reconstruction looks almost the same as the original.
 
 
 ## 2. Source layout

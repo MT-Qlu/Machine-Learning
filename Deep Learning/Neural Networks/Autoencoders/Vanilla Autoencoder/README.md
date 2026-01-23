@@ -24,6 +24,10 @@ With a bottleneck ($\dim(\mathbf{z}) \ll \dim(\mathbf{x})$), the model is forced
 - **Overcomplete AE**: larger latent space requires additional regularisation (sparsity, noise, contraction) to avoid trivial solutions.
 - **Loss choice**: MSE emphasises pixel-wise fidelity; MAE can produce sharper reconstructions.
 
+## Beginner example
+
+Think of shrinking a photo into a tiny thumbnail and then enlarging it back. A vanilla autoencoder learns how to do that compression and reconstruction so the enlarged image looks close to the original.
+
 ---
 
 ## Learning goals

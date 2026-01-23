@@ -2,6 +2,10 @@
 
 Fast overview of the unsupervised modules currently scaffolded in this workspace. Each directory mirrors the production-ready structure used by supervised learning so future implementations can plug into notebooks, FastAPI services, and benchmarking pipelines without friction.
 
+## Beginner example
+
+Imagine you have a folder of photos but no labels. Unsupervised learning groups similar photos together (e.g., beaches vs. mountains) or finds hidden patterns without being told what the groups are.
+
 ## K-Means Clustering
 - **Core idea:** Partition observations into `k` clusters by minimising within-cluster variance.
 - **Status:** Pipeline, training, inference, and CLI stubs created; notebooks and evaluation scripts forthcoming.

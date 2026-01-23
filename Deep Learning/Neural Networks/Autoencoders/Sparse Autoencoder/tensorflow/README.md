@@ -14,6 +14,10 @@ $$
 
 This biases the latent space toward low activation rates, producing more interpretable features.
 
+## Beginner example
+
+Imagine compressing a sentence so only a few key words remain. The sparse autoencoder does the same for images: it turns on a small number of latent units so each unit learns a distinct visual pattern.
+
 ---
 
 ## Learning goals

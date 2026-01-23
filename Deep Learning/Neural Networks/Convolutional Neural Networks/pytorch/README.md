@@ -41,6 +41,10 @@ python "Deep Learning/Neural Networks/Convolutional Neural Networks/pytorch/src/
 - Artefacts land in `artifacts/pytorch_cnn/` (weights + metrics JSON).
 - Modify `CONFIG` to adjust epochs, learning rate, or dataset path—no code changes needed elsewhere.
 
+## Beginner example
+
+Imagine a photo of a shoe. The CNN scans small patches and learns edges and shapes (like laces or soles). After training, it can label a new image as “sneaker” or “boot” because it recognises those learned patterns.
+
 ---
 
 ## 4. Suggested exercises

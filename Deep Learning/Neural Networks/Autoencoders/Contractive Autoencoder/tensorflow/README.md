@@ -14,6 +14,10 @@ $$
 
 This produces robust latent features that change slowly under small perturbations.
 
+## Beginner example
+
+Imagine two nearly identical images (same shoe, slightly rotated). A contractive autoencoder tries to give both images almost the same latent code, so the model is stable and less sensitive to tiny changes.
+
 ---
 
 ## Learning goals

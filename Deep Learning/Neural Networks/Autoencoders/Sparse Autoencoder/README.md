@@ -24,6 +24,10 @@ $$
 
 The penalty prevents trivial identity mappings even when the latent space is large, yielding **feature-like** encodings that resemble parts-based representations.
 
+## Beginner example
+
+Think of summarising a photo using only a few “keywords.” A sparse autoencoder tries to keep most latent units off, turning on only a handful to describe the image. That makes each latent unit more interpretable because it activates for specific patterns.
+
 ---
 
 ## Learning goals

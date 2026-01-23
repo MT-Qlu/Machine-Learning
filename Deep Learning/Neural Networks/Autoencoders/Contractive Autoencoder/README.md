@@ -14,6 +14,10 @@ $$
 
 This encourages **locally invariant features**, improving robustness to small perturbations and often producing smoother latent manifolds. The regulariser can be computed analytically for common activation functions or approximated via autodiff.
 
+## Beginner example
+
+If you slightly blur or shift a photo, you still want the representation to look similar. The contractive autoencoder penalises large changes in the encoding, so small input tweaks don’t cause big jumps in the latent space.
+
 - `pytorch/` — Torch module that adds a Jacobian-based penalty inside the training loop.
 - `tensorflow/` — Keras model with a custom training step implementing the same penalty.
 
